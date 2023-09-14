@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Listeners\BrincandoListener;
+use App\Listeners\FailedLoginListener;
 use App\Listeners\LoginListener;
 use Illuminate\Auth\Events\Attempting;
 use Illuminate\Auth\Events\Failed;
@@ -30,7 +31,7 @@ class EventServiceProvider extends ServiceProvider
             BrincandoListener::class,
         ],
         Failed::class => [
-            BrincandoListener::class,
+            FailedLoginListener::class,
         ],
     ];
 
